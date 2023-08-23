@@ -43,6 +43,10 @@ Route::get('/carReservation', function () {
     return view('carReservation');
 })->name('carReservation');
 
+Route::get('/carReservation/confirmation', function () {
+    return view('carReservationConfirmation');
+})->name('carReservationConfirmation');
+
 Route::get('/lectureReservation', function () {
     return view('lectureReservation');
 })->name('lectureReservation');
