@@ -13,11 +13,6 @@
         <p>予約日：</p>
         <p>利用時間：</p>
     </div>
-    
-    {{-- @if()
-        <h1>**レンタルする車で自動車教習所の講習が受けられます!**</h1>
-        <h2>自動車教習所の予約を希望しますか？<input type="checkbox"></h2>
-    @endif --}}
 
     <button>予約確定</button>
     <button>戻る</button>
