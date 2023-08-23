@@ -24,6 +24,7 @@ return new class extends Migration
                 $table->text('addres');
                 $table->decimal('fee', $precision = 8, $scale = 1);
                 $table->text('name_owner');
+                $table->string('img_path');
                 $table->foreign('school_id')->references('school_id')->on('driving_schools');
 
             });
