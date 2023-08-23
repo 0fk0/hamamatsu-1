@@ -8,7 +8,7 @@
         <p>**レンタルする車で自動車教習所の講習が受けられます**</p>
     @endif --}}
     {{-- @foreach() --}}
-        <a href="">
+        <a href="{{ route('carDisplay') }}">
             <div>
                 <img src="" alt="">
                 <p>車種:</p>
