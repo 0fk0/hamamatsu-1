@@ -21,7 +21,7 @@ return new class extends Migration
                 $table->bigIncrements('car_id');
                 $table->text('model');
                 $table->integer('capacity');
-                $table->text('addres');
+                $table->text('address');
                 $table->decimal('fee', $precision = 8, $scale = 1);
                 $table->text('name_owner');
                 $table->string('img_path');
