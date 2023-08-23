@@ -16,7 +16,7 @@ return new class extends Migration
     public function up(): void
     {
         // "users"テーブルは存在しなかった場合
-        //if (!Schema::hasTable('cars')) {
+        if (!Schema::hasTable('cars')) {
             Schema::create('cars', function (Blueprint $table) {
                 $table->bigIncrements('car_id');
                 $table->text('model');
@@ -24,10 +24,10 @@ return new class extends Migration
                 $table->text('addres');
                 $table->decimal('fee', $precision = 8, $scale = 1);
                 $table->text('name_owner');
-                //$table->foreign('school_id')->references('drivin_school')->on('school_id');
+                $table->foreign('school_id')->references('school_id')->on('driving_schools');
 
             });
-        //}
+        }
     }
     
 
