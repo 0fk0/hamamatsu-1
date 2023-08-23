@@ -43,6 +43,9 @@ Route::get('/carReservation', function () {
     return view('carReservation');
 })->name('carReservation');
 
+Route::get('/lectureReservation', function () {
+    return view('lectureReservation');
+})->name('lectureReservation');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
