@@ -35,6 +35,10 @@ Route::get('/carlist', function () {
     return view('carlist');
 })->name('carlist');
 
+Route::get('/carDisplay', function () {
+    return view('carDisplay');
+})->name('carDisplay');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
