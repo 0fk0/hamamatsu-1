@@ -51,6 +51,10 @@ Route::get('/lectureReservation', function () {
     return view('lectureReservation');
 })->name('lectureReservation');
 
+Route::get('/lectureReservation/confirmation', function () {
+    return view('lectureReservationConfirmation');
+})->name('lectureReservationConfirmation');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
