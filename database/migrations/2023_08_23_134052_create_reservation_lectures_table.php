@@ -15,10 +15,10 @@ return new class extends Migration
         if (!Schema::hasTable('reservation_lectures')) {
             Schema::create('reservation_lectures', function (Blueprint $table) {
                 $table->bigIncrements('reservation_lecture_id');
-                $table->foreign('school_id')->references('school_id')->on('driving_schools');
+                $table->foreignId('school_id');
                 $table->datetime('start_datetime');
                 $table->datetime('end_datetime');
-                $table->foreign('lecture_course_id')->references('lecture_course_id')->on('lecture_courses');
+                $table->foreignId('lecture_course_id');
             });
         }
     }
