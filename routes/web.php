@@ -31,6 +31,10 @@ Route::get('/q2', function () {
     return view('q2');
 })->name('q2');
 
+Route::get('/carlist', function () {
+    return view('carlist');
+})->name('carlist');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
