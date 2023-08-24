@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,13 +32,10 @@ Route::get('/q2', function () {
     return view('q2');
 })->name('q2');
 
-Route::get('/carlist', function () {
-    return view('carlist');
-})->name('carlist');
+Route::get('/carlist', [CarController::class, 'index'])->name('carlist');
 
-Route::get('/carDisplay', function () {
-    return view('carDisplay');
-})->name('carDisplay');
+Route::get('/car/{car_id}', [CarController::class, 'show'])->name('carDisplay');
+
 
 Route::get('/carReservation', function () {
     return view('carReservation');
