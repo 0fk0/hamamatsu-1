@@ -11,6 +11,6 @@ class Car extends Model
     protected $table = 'cars';
 
     // 可変項目
-    protected $fillable = ['model', 'capacity', 'address', 'fee', 'name_owner', 'img_path'];
+    protected $fillable = ['car_id','model', 'capacity', 'address', 'fee', 'name_owner', 'img_path'];
 }
 

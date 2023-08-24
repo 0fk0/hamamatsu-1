@@ -20,7 +20,7 @@ class CarController extends Controller
     public function show($car_id)
     {
         // 特定の車の情報を取得
-        $car = Car::find($car_id);
+        $cars = Car::find($car_id);
 
         // 詳細情報をビューに渡して表示
         return view('carDisplay', ['car' => $car]);
