@@ -17,10 +17,10 @@ class CarController extends Controller
         return view('carlist', ['cars' => $cars]);
     }
 
-    public function show($id)
+    public function show($car_id)
     {
         // 特定の車の情報を取得
-        $car = Car::find($id);
+        $car = Car::find($car_id);
 
         // 詳細情報をビューに渡して表示
         return view('carDisplay', ['car' => $car]);
