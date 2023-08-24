@@ -15,11 +15,13 @@ return new class extends Migration
         if (!Schema::hasTable('reservations')) {
             Schema::create('reservations', function (Blueprint $table) {
                 $table->bigIncrements('reservation_id');
-                $table->foreign('reservation_car_id')->references('reservation_car_id')->on('reservation_cars');
-                $table->foreign('reservation_lecture_id')->references('reservation_lecture_id')->on('reservation_lectures');
+                $table->foreignId('reservation_car_id');
+                $table->foreignId('reservation_lecture_id');
                 $table->text('name');
                 $table->unsignedBigInteger('tel');
                 $table->text('mail_address');
+
+                $table->timestamps();
                 
             });
         }

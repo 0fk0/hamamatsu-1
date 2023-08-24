@@ -14,9 +14,10 @@ return new class extends Migration
         if (!Schema::hasTable('reservation_cars')) {
             Schema::create('reservation_cars', function (Blueprint $table) {
                 $table->bigIncrements('reservation_car_id');
-                $table->foreign('car_id')->references('car_id')->on('cars');
+                $table->foreignId('car_id');
                 $table->date('start_date');
                 $table->date('end_date');
+                $table->timestamps();
             });
     
         }
