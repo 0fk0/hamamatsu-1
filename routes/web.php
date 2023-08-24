@@ -34,7 +34,7 @@ Route::get('/q2', function () {
 
 Route::get('/carlist', [CarController::class, 'index'])->name('carlist');
 
-Route::get('/carDisplay/{car_id}', [CarController::class, 'show'])->name('carDisplay');
+Route::get('/car/{car_id}', [CarController::class, 'show'])->name('carDisplay');
 
 
 Route::get('/carReservation', function () {
