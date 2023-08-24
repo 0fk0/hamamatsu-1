@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
         //\App\Models\ReservationCar::factory(10)->create();
         $this ->call(ReservationCarTableSeeder::class);
         //$this ->call(ReservationLectureTableSeeder::class);
-        \App\Models\ReservationLecture::factory(5)->create();
+        \App\Models\ReservationLecture::factory(1)->create();
     }
 }

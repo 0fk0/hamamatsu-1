@@ -13,6 +13,6 @@ class ReservationLectureTableSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\ReservationLecture::factory(5)->create();
+        \App\Models\ReservationLecture::factory(1)->create();
     }
 }
