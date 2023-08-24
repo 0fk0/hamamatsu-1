@@ -1,32 +1,40 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div>
-        <h1>講習予約</h1>
-        <h3>講習指定場所</h3>
+    <form action="{{ route('lectureReservationConfirmation') }}" method="get">
         <div>
-            <h2>自動車学校</h2>
-            <p>住所：</p>
-            <p>連絡先：</p>
-        </div>
-    </div>
-    <div>
-        <div>
-            <h2>予約日時を指定してください</h2>
+            <h1>講習予約</h1>
+            <h3>講習指定場所</h3>
             <div>
-                <p>予約日<input type="text"></p>
-                <p>利用時間<input type="text"></p>
+                <h2>自動車学校</h2>
+                <p>住所：</p>
+                <p>連絡先：</p>
             </div>
         </div>
         <div>
-            <h2>練習コース</h2>
-            <select name="練習コース">
-                <option value="初級(場内)">初級(場内)</option>
-                <option value="初級(場内)">中級(一般道)</option>
-            </select>
+            <div>
+                <h2>予約日時を指定してください</h2>
+                <div>
+                    <p>予約日<input type="date"></p>
+                    <p>利用時間
+                        <select name="" id="">
+                            <option value="10:00">10:00 ~ 12:00</option>
+                            <option value="13:00">13:00 ~ 15:00</option>
+                            <option value="15:00">15:00 ~ 17:00</option>
+                            <option value="17:00">17:00 ~ 19:00</option>
+                        </select>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <h2>練習コース</h2>
+                <select name="練習コース">
+                    <option value="初級(場内)">初級(場内)</option>
+                    <option value="初級(場内)">中級(一般道)</option>
+                </select>
+            </div>
         </div>
-    </div>
 
-    <button>予約確定</button>
-    <button>戻る</button>
+        <button type="submit">予約確定</button>
+    </form>
 @endsection
