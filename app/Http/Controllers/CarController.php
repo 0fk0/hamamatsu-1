@@ -29,7 +29,7 @@ class CarController extends Controller
         $car_id = (int)$request->car_id;
 
         // 特定の車の情報を取得
-        $car = Car::find($car_id);
+        $car = Car::where('car_id', $car_id)->first();
 
         // 詳細情報をビューに渡して表示
         return view('carDisplay', ['car' => $car]);
