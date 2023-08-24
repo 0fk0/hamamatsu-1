@@ -4,15 +4,14 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-//use Illuminate\Database\Seeder\factory;
 
-class ReservationLectureTableSeeder extends Seeder
+class DrivingSchoolTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        \App\Models\ReservationLecture::factory(3)->create();
+        \App\Models\DrivingSchool::factory(2)->create();
     }
 }

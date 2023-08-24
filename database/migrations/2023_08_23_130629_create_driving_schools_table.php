@@ -16,7 +16,7 @@ return new class extends Migration
                 $table->bigIncrements('school_id');
                 $table->text('name');
                 $table->text('address');
-                $table->unsignedBigInteger('tel');
+                $table->string('tel');
 
                 $table->timestamps();
             });
