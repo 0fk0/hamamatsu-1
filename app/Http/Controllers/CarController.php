@@ -8,19 +8,28 @@ use Illuminate\Http\Request;
 class CarController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        // Car モデルからすべての車のデータを取得
-        $cars = Car::all();
+        // アンケート結果を取得
+        $result = $request->input('result');
+
+        // アンケート結果に応じて表示する車のデータを選択
+        if ($result === '3') {
+            $cars = Car::where('capacity', '<=', 5)->get();
+        } else {
+            $cars = Car::all();
+        }
 
         // 取得したデータをビューに渡して一覧表示
         return view('carlist', ['cars' => $cars]);
     }
 
-    public function show($car_id)
+    public function show(Request $request)
     {
+        $car_id = (int)$request->car_id;
+
         // 特定の車の情報を取得
-        $cars = Car::find($car_id);
+        $car = Car::where('car_id', $car_id)->first();
 
         // 詳細情報をビューに渡して表示
         return view('carDisplay', ['car' => $car]);

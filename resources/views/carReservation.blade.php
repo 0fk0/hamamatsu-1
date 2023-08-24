@@ -8,10 +8,10 @@
             <div>
                 <img src="" alt="">
                 <input type="text" name="car_id" value="{{ request()->input('car_id') }}">
-                <p>車種：</p>
-                <p>乗車可能人数：</p>
-                <p>住所：</p>
-                <p>料金(一日あたり)：</p>
+                <p>車種：{{ request()->input('date') }}</p>
+                <p>乗車可能人数：{{ request()->input('date') }}</p>
+                <p>住所：{{ request()->input('date') }}</p>
+                <p>料金(一日あたり)：{{ request()->input('date') }}</p>
             </div>
         </div>
         <div>
