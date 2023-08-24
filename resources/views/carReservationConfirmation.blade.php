@@ -9,20 +9,18 @@
             <h1>レンタル予約</h1>
             <div>
                 <h2>予約内容</h2>
-                <p>車種：</p>
-                <p>乗車可能人数：</p>
-                <p>駐車場住所：</p>
-                <p>所有者：</p>
-                <p>所有者連絡先：</p>
-                <p>貸出期間：</p>
-                <p>料金：</p>
+                <p>車種：<input type="text" name="model" value="a" readonly></p>
+                <p>乗車可能人数：<input type="text" name="capacity" value="a" readonly></p>
+                <p>駐車場住所：<input type="text" name="address" value="a" readonly></p>
+                <p>所有者：<input type="text" name="name_owner" value="a" readonly></p>
+                <p>貸出期間：<input type="text" name="start_date" value="a" readonly>~<input type="text" name="end_date" value="a" readonly></p>
+                <p>料金：<input type="text" name="fee" value="a" readonly></p>
             </div>
             <div>
                 <h2>予約者情報</h2>
-                <p>名前：</p>
-                <p>住所：</p>
-                <p>電話番号</p>
-                <p>メールアドレス</p>
+                <p>名前：<input type="text" name="name" value="a" readonly></p>
+                <p>電話番号：<input type="text" name="tel" value="a" readonly></p>
+                <p>メールアドレス：<input type="text" name="mail_address" value="a" readonly></p>
             </div>
             <div>
                 <h2>講習希望</h2>

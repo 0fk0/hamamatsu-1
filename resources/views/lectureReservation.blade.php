@@ -7,8 +7,8 @@
             <h3>講習指定場所</h3>
             <div>
                 <h2>自動車学校</h2>
-                <p>住所：</p>
-                <p>連絡先：</p>
+                <p>住所：<input type="text" name="address" value="a" readonly></p>
+                <p>連絡先：<input type="text" name="tel" readonly></p>
             </div>
         </div>
         <div>
