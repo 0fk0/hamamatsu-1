@@ -14,10 +14,8 @@ class CarController extends Controller
         $result = $request->input('result');
 
         // アンケート結果に応じて表示する車のデータを選択
-        if ($result === '2') {
-            $cars = Car::where('capacity', '<', 10)->get();
-        } elseif ($result === '3') {
-            $cars = Car::where('capacity', '>=', 10)->get();
+        if ($result === '3') {
+            $cars = Car::where('capacity', '<=', 5)->get();
         } else {
             $cars = Car::all();
         }
