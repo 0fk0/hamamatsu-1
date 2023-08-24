@@ -26,7 +26,8 @@ class CarController extends Controller
 
     public function show(Request $request)
     {
-        $car_id = request()->input('car_id');
+        $car_id = (int)$request->car_id;
+
         // 特定の車の情報を取得
         $car = Car::find($car_id);
 
