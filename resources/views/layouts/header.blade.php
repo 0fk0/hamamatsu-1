@@ -1,3 +1,3 @@
 <header>
-    <h1>サイト名</h1>
+    <h2 class="" style="background-color: rgb(83, 14, 212);color:aliceblue">ペーパードライバーを救いたい</h2>
 </header>
