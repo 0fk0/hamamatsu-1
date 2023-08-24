@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\DrivingSchoolController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,12 +35,14 @@ Route::get('/q2', function () {
 
 Route::get('/carlist', [CarController::class, 'index'])->name('carlist');
 
-Route::get('/carDisplay/{car_id}', [CarController::class, 'show'])->name('carDisplay');
+Route::get('/carDisplay', [CarController::class, 'show'])->name('carDisplay');
 
 
 Route::get('/carReservation', function () {
     return view('carReservation');
 })->name('carReservation');
+
+//Route::get('/carReservation/{car_id}', [CarController::class, 'show'])->name('carReservation');
 
 Route::post('/carReservation/confirmation', function () {
     return view('carReservationConfirmation');
@@ -48,6 +51,8 @@ Route::post('/carReservation/confirmation', function () {
 Route::get('/lectureReservation', function () {
     return view('lectureReservation');
 })->name('lectureReservation');
+
+//Route::get('/lectureReservation/{car_id}',[DrivingSchoolController::class, 'show'])->name('lectureReservation');
 
 Route::get('/lectureReservation/confirmation', function () {
     return view('lectureReservationConfirmation');
