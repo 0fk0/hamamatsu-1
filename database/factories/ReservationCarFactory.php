@@ -19,14 +19,12 @@ class ReservationCarFactory extends Factory
 
     public function definition(): array
     {
-        // $start_date =  fake() -> date($format=‘Y-m-d’,$min=‘now’);
-        // $end_date = $start_date->addDays(3);
+
 
         return [
-            //'reservation_car_id' => fake() -> dateTimeBetween($startDate = 'now', $endDate = '+2 week'),
             'car_id' => fake()->numberBetween($min = 1, $max = 10),
-            'start_date' =>fake() -> dateTimeBetween($startDate = 'now', $endDate = '+2 week'),
-            'end_date' => '2023-08-23'
+            'start_date' =>fake() -> dateTimeBetween($startDate = 'now', $endDate = '+1 week'),
+            'end_date' => fake() -> dateTimeBetween($startDate = '+1 week', $endDate = '+2 week')
         ];
     }
 }

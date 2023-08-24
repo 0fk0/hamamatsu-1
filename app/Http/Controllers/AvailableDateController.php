@@ -17,10 +17,10 @@ class AvailableDateController extends Controller
     public function showEachAvarableDate ($car_id) {
 
         //car_idが一致する車予約データを取得
-        $reservation_car = Reservation_car::where('car_id','=',$car_id)->get();
+        $reservation_car = ReservationCar::where('car_id','=',$car_id)->get();
 
         //講習予約データを取得
-        $reservation_car = Reservation_car::all();
+        $reservation_car = ReservationLecture::all();
 
         return view();//各詳細ページのviewをはる
 

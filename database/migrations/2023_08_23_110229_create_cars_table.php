@@ -27,6 +27,8 @@ return new class extends Migration
                 $table->string('img_path');
                 $table->foreignId('school_id');
 
+                $table->timestamps();
+
             });
         }
     }

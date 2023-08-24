@@ -20,6 +20,8 @@ return new class extends Migration
                 $table->text('name');
                 $table->unsignedBigInteger('tel');
                 $table->text('mail_address');
+
+                $table->timestamps();
                 
             });
         }

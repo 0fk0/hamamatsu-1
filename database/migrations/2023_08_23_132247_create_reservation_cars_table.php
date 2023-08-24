@@ -17,7 +17,6 @@ return new class extends Migration
                 $table->foreignId('car_id');
                 $table->date('start_date');
                 $table->date('end_date');
-
                 $table->timestamps();
             });
     

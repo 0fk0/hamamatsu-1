@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\ReservationCar;
+//use App\Models\ReservationCar;
 use Illuminate\Database\Seeder\factory;
 
 class ReservationCarTableSeeder extends Seeder

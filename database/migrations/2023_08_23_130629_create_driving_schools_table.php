@@ -17,6 +17,8 @@ return new class extends Migration
                 $table->text('name');
                 $table->text('address');
                 $table->unsignedBigInteger('tel');
+
+                $table->timestamps();
             });
         }   
     }

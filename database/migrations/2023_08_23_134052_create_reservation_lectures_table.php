@@ -16,9 +16,12 @@ return new class extends Migration
             Schema::create('reservation_lectures', function (Blueprint $table) {
                 $table->bigIncrements('reservation_lecture_id');
                 $table->foreignId('school_id');
+                $table->foreignId('lecture_course_id');
                 $table->datetime('start_datetime');
                 $table->datetime('end_datetime');
-                $table->foreignId('lecture_course_id');
+                
+
+                $table->timestamps();
             });
         }
     }
