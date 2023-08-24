@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Reservation_car;
-use App\Models\Reservation_lecture;
+use App\Models\ReservationCar;
+use App\Models\ReservationLecture;
+use Carbon\Carbon;
 
 /**
      * 車、講習のそれぞれの予約状況の表示
@@ -14,15 +15,42 @@ use App\Models\Reservation_lecture;
 class AvailableDateController extends Controller
 {
     
-    public function showEachAvarableDate ($car_id) {
+    public function showEachAvarableDate() {
 
-        //car_idが一致する車予約データを取得
-        $reservation_car = ReservationCar::where('car_id','=',$car_id)->get();
+        
+        $car_id =4; //テスト用
 
-        //講習予約データを取得
-        $reservation_car = ReservationLecture::all();
+        //reserved car date
+        $reservation_cars = ReservationCar::where('car_id','=',$car_id)->get(); 
 
-        return view();//各詳細ページのviewをはる
+        $reserved_list=[];
+        
+        foreach ($reservation_cars as $data) {
+
+            // 2つの日付の間の日付範囲を生成
+            $dateRange =Carbon::parse($data->start_date)->daysUntil($data->end_date);
+            // 生成された日付範囲を配列として取得
+            $tmp_dates = $dateRange->toArray();
+            // 配列内にすでに該当する日付がなければ予約日リストに追加(サンプルデータ用)
+            foreach ($tmp_dates as $date) {
+                if (!in_array($date, $reserved_list)) {
+                    $reserved_list[] = $date; 
+                    //echo($date);
+                }
+            }
+        }    
+
+        //reserved lecture date
+
+        //car_idに対応するschool_idを取得
+        //
+
+        $reservation_lecture = ReservationLecture::all();
+        dd($reservation_lecture);
+
+        //dd($reservation_lecture);
+
+        return view('carDisplay');//各詳細ページのviewをはる
 
     }
 }
