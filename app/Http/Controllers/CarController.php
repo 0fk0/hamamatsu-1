@@ -13,7 +13,7 @@ class CarController extends Controller
         $cars = Car::all();
 
         // 取得したデータをビューに渡して一覧表示
-        return view('cars.index', ['cars' => $cars]);
+        return view('carlist', ['cars' => $cars]);
     }
 
     public function show($id)
@@ -22,6 +22,6 @@ class CarController extends Controller
         $car = Car::find($id);
 
         // 詳細情報をビューに渡して表示
-        return view('cars.show', ['car' => $car]);
+        return view('carDisplay', ['car' => $car]);
     }
 }
