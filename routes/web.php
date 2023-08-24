@@ -41,7 +41,7 @@ Route::get('/carReservation', function () {
     return view('carReservation');
 })->name('carReservation');
 
-Route::get('/carReservation/confirmation', function () {
+Route::post('/carReservation/confirmation', function () {
     return view('carReservationConfirmation');
 })->name('carReservationConfirmation');
 

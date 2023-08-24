@@ -15,22 +15,22 @@
             <div>
                 <h2>予約日時を指定してください</h2>
                 <div>
-                    <p>予約日<input type="date"></p>
+                    <p>予約日<input type="date" name="date"></p>
                     <p>利用時間
-                        <select name="" id="">
-                            <option value="10:00">10:00 ~ 12:00</option>
-                            <option value="13:00">13:00 ~ 15:00</option>
-                            <option value="15:00">15:00 ~ 17:00</option>
-                            <option value="17:00">17:00 ~ 19:00</option>
+                        <select name="time">
+                            <option value="1">10:00 ~ 12:00</option>
+                            <option value="2">13:00 ~ 15:00</option>
+                            <option value="3">15:00 ~ 17:00</option>
+                            <option value="4">17:00 ~ 19:00</option>
                         </select>
                     </p>
                 </div>
             </div>
             <div>
                 <h2>練習コース</h2>
-                <select name="練習コース">
-                    <option value="初級(場内)">初級(場内)</option>
-                    <option value="初級(場内)">中級(一般道)</option>
+                <select name="lecture_course_id">
+                    <option value="elementary">初級(場内)</option>
+                    <option value="intermediate">中級(一般道)</option>
                 </select>
             </div>
         </div>
