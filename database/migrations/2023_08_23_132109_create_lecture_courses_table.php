@@ -17,6 +17,8 @@ return new class extends Migration
                 $table->bigIncrements('lecture_course_id');
                 $table->text('name');
 
+                $table->timestamps();
+
             });
         }
     }

@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
+
+    use hasFactory;
+    
     // テーブル名
     protected $table = 'cars';
 
