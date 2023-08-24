@@ -21,7 +21,7 @@ class ReservationLectureFactory extends Factory
             'school_id' => fake()->numberBetween($min = 1, $max = 3),
             'start_datetime' =>fake() -> dateTimeBetween($startDate = 'now', $endDate = '+1 week')->format('Y-m-d H:i:s'),
             'end_datetime' => fake() -> dateTimeBetween($startDate = '+1 week', $endDate = '+2 week')->format('Y-m-d H:i:s'),
-            'lecture_course_id' => fake()->numberBetween($min = 1, $max = 3)
+            'lecture_course_id' => fake()->numberBetween($min = 1, $max = 2)
         ];
     }
 }

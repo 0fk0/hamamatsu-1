@@ -15,7 +15,7 @@ class ReservationCarTableSeeder extends Seeder
     public function run(): void
     {
 
-        \App\Models\ReservationCar::factory(10)->create();
+        \App\Models\ReservationCar::factory(5)->create();
         //factory(reservation_car::class)->create();
     }
 }

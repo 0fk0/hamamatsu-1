@@ -18,7 +18,10 @@ class DatabaseSeeder extends Seeder
          //    'name' => 'Test User',
          //    'email' => 'test@example.com',
          //]);
-        //\App\Models\ReservationCar::factory(10)->create();
+
+        $this ->call(CarTableSeeder::class);
+        $this ->call(LectureCourseTableSeeder::class);
+        $this ->call(DrivingSchoolTableSeeder::class);
         $this ->call(ReservationCarTableSeeder::class);
         //$this ->call(ReservationLectureTableSeeder::class);
         \App\Models\ReservationLecture::factory(5)->create();
