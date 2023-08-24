@@ -13,7 +13,7 @@
                 <img src="" alt="">
                 <p>車種:</p>
                 <p>人数:</p>
-                <p>住所</p>
+                <p>住所:</p>
             </div>
         </a>
     {{-- @endforeach --}}
