@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ReservationCar;
 use App\Models\ReservationLecture;
+use App\Models\Car;
+
 use Carbon\Carbon;
 
 /**
@@ -15,13 +17,14 @@ use Carbon\Carbon;
 class AvailableDateController extends Controller
 {
     
-    public function showEachAvarableDate() {
+    public function showEachAvarableDate($request) {
 
-        
-        $car_id =4; //テスト用
+        $car_id = (int)$request;//(int)$car_id_text;
+        //echo($car_id);
 
         //reserved car date
         $reservation_cars = ReservationCar::where('car_id','=',$car_id)->get(); 
+        //echo($reservation_cars);
 
         $reserved_list=[];
         
@@ -43,14 +46,29 @@ class AvailableDateController extends Controller
         //reserved lecture date
 
         //car_idに対応するschool_idを取得
-        //
+        $car = Car::where('car_id','=',$car_id)->get(); 
 
-        $reservation_lecture = ReservationLecture::all();
-        dd($reservation_lecture);
-
+        foreach ($car as $data) {
+           echo($data->school_id);
+           $school_id = $data->school_id;
+        }
+        
+        //該当する車校の予約状況を取得
+        $reservation_lecture = ReservationLecture::where('school_id','=',$school_id)->get(); 
         //dd($reservation_lecture);
+        foreach ($reservation_lecture as $date) {
+            if (!in_array($date, $reserved_list)) {
+                $reserved_list[] = $date; 
+                //echo($date);
+            }
+        }
+
+        foreach($reserved_list as $test){
+            echo($test);
+        }
 
         return view('carDisplay');//各詳細ページのviewをはる
+        
 
     }
 }
