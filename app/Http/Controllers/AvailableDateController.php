@@ -22,7 +22,7 @@ class AvailableDateController extends Controller
         $car_id = (int)$request;//(int)$car_id_text;
         //echo($car_id);
 
-        //reserved car date
+        //車の予約状況の取得
         $reservation_cars = ReservationCar::where('car_id','=',$car_id)->get(); 
         //echo($reservation_cars);
 
