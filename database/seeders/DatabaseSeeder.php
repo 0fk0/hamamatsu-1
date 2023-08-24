@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         $this ->call(LectureCourseTableSeeder::class);
         $this ->call(DrivingSchoolTableSeeder::class);
         $this ->call(ReservationCarTableSeeder::class);
-        //$this ->call(ReservationLectureTableSeeder::class);
-        \App\Models\ReservationLecture::factory(5)->create();
+        $this ->call(ReservationLectureTableSeeder::class);
+
     }
 }
