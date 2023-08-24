@@ -44,8 +44,7 @@
             @endfor
         </table>
     </div>
-    <div>
-        <button>この車で予約を行う</button>
-        <button>戻る</button>
-    </div>
+    <a href="{{ route('carReservation', ['car_id'=>request()->input('car_id')]) }}">この車で予約を行う</a>
+
+    <a href="{{ route('carlist') }}">戻る</a>
 @endsection

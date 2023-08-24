@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,14 +32,30 @@ Route::get('/q2', function () {
     return view('q2');
 })->name('q2');
 
-Route::get('/carlist', function () {
-    return view('carlist');
-})->name('carlist');
+Route::get('/carlist', [CarController::class, 'index'])->name('carlist');
 
-Route::get('/carDisplay', function () {
-    return view('carDisplay');
-})->name('carDisplay');
+Route::get('/car/{car_id}', [CarController::class, 'show'])->name('carDisplay');
 
+
+Route::get('/carReservation', function () {
+    return view('carReservation');
+})->name('carReservation');
+
+Route::post('/carReservation/confirmation', function () {
+    return view('carReservationConfirmation');
+})->name('carReservationConfirmation');
+
+Route::get('/lectureReservation', function () {
+    return view('lectureReservation');
+})->name('lectureReservation');
+
+Route::get('/lectureReservation/confirmation', function () {
+    return view('lectureReservationConfirmation');
+})->name('lectureReservationConfirmation');
+
+Route::get('/completion', function () {
+    return view('completion');
+})->name('completion');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
