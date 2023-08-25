@@ -1,7 +1,8 @@
 @extends('layouts.layout')
 
 @section('content')
-    <form action="{{ route('lectureReservationConfirmation') }}" method="get">
+    <form action="{{ route('lectureReservationConfirmation') }}" method="post">
+        @csrf
         <div>
             <h1>講習予約</h1>
             <h3>講習指定場所</h3>
@@ -35,6 +36,6 @@
             </div>
         </div>
 
-        <button type="submit">予約確定</button>
+        <button type="submit">予約内容確認</button>
     </form>
 @endsection

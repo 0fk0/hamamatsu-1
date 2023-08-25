@@ -3,14 +3,13 @@
 @section('content')
     <h1>自動車詳細情報</h1>
     <div>
-        <img src="" alt="">
+        <img src="{{ asset($car->img_path) }}" alt="">
         <div>
-            <p>車種：</p>
-            <p>最大乗車可能人数：</p>
-            <p>住所：</p>
-            <p>料金(/日)：</p>
-            <p>所有者：</p>
-            <p>一言コメント</p>
+            <p>車種：{{ $car->model }}</p>
+            <p>最大乗車可能人数：{{ $car->capacity }}</p>
+            <p>住所：{{ $car->address }}</p>
+            <p>料金(/日)：{{ $car->fee }}</p>
+            <p>所有者：{{ $car->name_owner }}</p>
         </div>
     </div>
     <div>
@@ -45,6 +44,4 @@
         </table>
     </div>
     <a href="{{ route('carReservation', ['car_id'=>request()->input('car_id')]) }}">この車で予約を行う</a>
-
-    <a href="{{ route('carlist') }}">戻る</a>
 @endsection
