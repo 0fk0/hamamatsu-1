@@ -67,12 +67,9 @@ class CarController extends Controller
 
         $reserved_lecture_list = [];
         //car_idに対応するschool_idを取得
-        $car = Car::where('car_id','=',$car_id)->get(); 
+        $car = Car::where('car_id','=',$car_id)->first(); 
 
-        foreach ($car as $data) {
-           //echo($data->school_id);
-           $school_id = $data->school_id;
-        }
+        $school_id = (int)$car->school_id;
         
         //該当する車校の予約状況を取得
         $reservation_lecture = ReservationLecture::where('school_id','=',$school_id)->get(); 
