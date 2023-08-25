@@ -5,7 +5,7 @@
         <h1>講習予約情報確認</h1>
         <div>
             <h2>予約内容</h2>
-            <p>講習場所：</p>
+            <p>講習場所：{{ request()->input('school_name') }}自動車学校</p>
             @if(request()->input('time') == "elementary")
                 <p>講習コース：初級(場内)</p>
             @else

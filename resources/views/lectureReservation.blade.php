@@ -7,9 +7,9 @@
             <h1>講習予約</h1>
             <h3>講習指定場所</h3>
             <div>
-                <h2>自動車学校</h2>
-                <p>住所：<input type="text" name="address" value="a" readonly></p>
-                <p>連絡先：<input type="text" name="tel" readonly></p>
+                <h2><input type="text" name="school_name" value="{{ $driving_school_info->name }}" readonly>自動車学校</h2>
+                <p>住所：<input type="text" name="address" value="{{ $driving_school_info->address }}" readonly></p>
+                <p>連絡先：<input type="text" name="tel" value="{{ $driving_school_info->tel }}" readonly></p>
             </div>
         </div>
         <div>
