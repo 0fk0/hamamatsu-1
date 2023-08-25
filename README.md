@@ -1,9 +1,13 @@
-# Relicサマーインターン（25卒）のサンプルアプリ
+# Relicサマーインターン(8/21~8/25)の成果物
+## チームメンバー(papers)
+- 0fk0
+- Akira3085
+- 429uuuu
 
-## 初回セットアップ手順（上から順番に実行）
+## 初回セットアップ
 
 ```sh
-# 作業ディレクトリに移動して作業を進めてください 
+# 作業ディレクトリに移動して以下の設定を行う
 
 cp .env.example .env
 
@@ -20,6 +24,11 @@ docker-compose exec laravel.test php artisan key:generate
 docker-compose exec laravel.test php artisan migrate:fresh
 docker-compose exec laravel.test npm install
 docker-compose exec laravel.test npm run dev
+
+# MigrationとSeederでデータベースとテストデータを作成
+docker-compose exec laravel.test /bin/bash
+php artisan migrate
+php artisan db:seed
 ```
 
 ## 起動
@@ -29,14 +38,14 @@ docker-compose up -d
 docker-compose exec laravel.test npm run dev
 ```
 
-## 停止するときは下記のコマンドを実行する
+## 停止
 
 ```sh
 docker-compose stop
 ```
 
 ## URL
-サンプルアプリ：http://localhost/
+アプリアクセス：http://localhost/
 
 phpMyAdmin: http://localhost:8080/
 
