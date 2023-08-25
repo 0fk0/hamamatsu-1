@@ -2,8 +2,8 @@
 
 @section('content')
     <h1>自動車詳細情報</h1>
-    <div>
-        <img src="{{ asset($car->img_path) }}" alt="">
+    <div class="uk-flex uk-flex-center uk-flex-middle">
+        <img src="{{ asset($car->img_path) }}" class="uk-padding uk-margin">
         <div>
             <p>車種：{{ $car->model }}</p>
             <p>最大乗車可能人数：{{ $car->capacity }}</p>
@@ -43,5 +43,11 @@
             @endfor
         </table>
     </div>
-    <a href="{{ route('carReservation', ['car_id'=>request()->input('car_id')]) }}">この車で予約を行う</a>
+    <a href="{{ route('carReservation', ['car_id'=>request()->input('car_id')]) }}" 
+     style="display: block;
+            padding: 15px 0;
+            margin: 10px;
+            background: gray;
+            color: #FFF;
+            text-decoration: none;">この車で予約を行う</a>
 @endsection
