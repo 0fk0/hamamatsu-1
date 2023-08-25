@@ -26,7 +26,7 @@ class CarController extends Controller
 
         // アンケート結果に応じて表示する車のデータを選択
         if ($result === '3') {
-            $cars = Car::where('capacity', '<=', 5)->get();
+            $cars = Car::where('capacity', '<=', 4)->get();
         } else {
             $cars = Car::all();
         }
@@ -35,9 +35,9 @@ class CarController extends Controller
         return view('carlist', ['cars' => $cars]);
     }
 
-    public function show(Request $request)
+    public function searchByCarid1(Request $request)
     {
-        $car_id = (int)$request->car_id;
+        $car_id = (int)$request->input('car_id');
 
         // 特定の車の情報を取得
         $car = Car::where('car_id', $car_id)->first();
@@ -89,11 +89,32 @@ class CarController extends Controller
             }
         }
 
-
         // 詳細情報をビューに渡して表示
         return view('carDisplay', [
             'car' => $car, 
             'reserved_car_list' => $reserved_car_list,
             'reserved_lecture_list' => $reserved_lecture_list]);
+    }
+
+    public function searchByCarid2(Request $request)
+    {
+        $car_id = (int)$request->input('car_id');
+
+        // 特定の車の情報を取得
+        $car = Car::where('car_id', '=', $car_id)->first();
+
+        // 詳細情報をビューに渡して表示
+        return view('carReservation', ['car' => $car]);
+    }
+
+    public function searchByCarid3(Request $request)
+    {
+        $car_id = (int)$request->input('car_id');
+
+        // 特定の車の情報を取得
+        $car = Car::where('car_id', '=', $car_id)->first();
+
+        // 詳細情報をビューに渡して表示
+        return view('carReservationConfirmation', ['car' => $car]);
     }
 }

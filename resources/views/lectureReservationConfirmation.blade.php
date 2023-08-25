@@ -6,6 +6,11 @@
         <div>
             <h2>予約内容</h2>
             <p>講習場所：</p>
+            @if(request()->input('time') == "elementary")
+                <p>講習コース：初級(場内)</p>
+            @else
+                <p>講習コース：中級(一般道)</p>
+            @endif
             <p>住所：{{ request()->input('address') }}</p>
             <p>連絡先：{{ request()->input('tel') }}</p>
         </div>
@@ -30,5 +35,4 @@
 
         <button type="submit">予約確定</button>
     </form>
-    <a href="{{ route('lectureReservation') }}">戻る</a>
 @endsection

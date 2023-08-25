@@ -34,22 +34,17 @@ Route::get('/q2', function () {
 
 Route::get('/carlist', [CarController::class, 'index'])->name('carlist');
 
-Route::get('/carDisplay/{car_id}', [CarController::class, 'show'])->name('carDisplay');
+Route::get('/carDisplay', [CarController::class, 'searchByCarid1'])->name('carDisplay');
 
+Route::get('/carReservation', [CarController::class, 'searchByCarid2'])->name('carReservation');
 
-Route::get('/carReservation', function () {
-    return view('carReservation');
-})->name('carReservation');
-
-Route::post('/carReservation/confirmation', function () {
-    return view('carReservationConfirmation');
-})->name('carReservationConfirmation');
+Route::post('/carReservation/confirmation', [CarController::class, 'searchByCarid3'])->name('carReservationConfirmation');
 
 Route::get('/lectureReservation', function () {
     return view('lectureReservation');
 })->name('lectureReservation');
 
-Route::get('/lectureReservation/confirmation', function () {
+Route::post('/lectureReservation/confirmation', function () {
     return view('lectureReservationConfirmation');
 })->name('lectureReservationConfirmation');
 
