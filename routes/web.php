@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\DrivingSchoolController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +25,38 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
+Route::get('/q1', function () {
+    return view('q1');
+})->name('q1');
+
+Route::get('/q2', function () {
+    return view('q2');
+})->name('q2');
+
+Route::get('/carlist', [CarController::class, 'index'])->name('carlist');
+
+Route::get('/carDisplay', [CarController::class, 'searchByCarid1'])->name('carDisplay');
+
+Route::get('/carReservation', [CarController::class, 'searchByCarid2'])->name('carReservation');
+
+
+//Route::get('/carReservation/{car_id}', [CarController::class, 'show'])->name('carReservation');
+Route::post('/carReservation/confirmation', [CarController::class, 'searchByCarid3'])->name('carReservationConfirmation');
+
+
+Route::get('/lectureReservation', function () {
+    return view('lectureReservation');
+})->name('lectureReservation');
+
+
+//Route::get('/lectureReservation/{car_id}',[DrivingSchoolController::class, 'show'])->name('lectureReservation');
+Route::post('/lectureReservation/confirmation', function () {
+    return view('lectureReservationConfirmation');
+})->name('lectureReservationConfirmation');
+
+Route::get('/completion', function () {
+    return view('completion');
+})->name('completion');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
