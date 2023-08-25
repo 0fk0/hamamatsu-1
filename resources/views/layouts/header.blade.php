@@ -1,3 +1,3 @@
 <header>
-    <h2 class="" style="background-color: rgb(83, 14, 212);color:aliceblue">ペーパードライバーを救いたい</h2>
+    <h2 class="uk-padding-small" style="background-color: #715AFF; color:aliceblue;">ペーパードライバーを救いたい</h2>
 </header>

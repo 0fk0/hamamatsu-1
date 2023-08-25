@@ -4,13 +4,15 @@
     <h1>レンタル予約</h1>
     <form action="{{ route('carReservationConfirmation') }}" method="post">
         @csrf
-        <div>
+        <div class="uk-border-rounded uk-background-muted uk-padding-small">
             <img src="{{ asset($car->img_path) }}" alt="">
             <input type="hidden" name="car_id" value="{{ request()->input('car_id') }}">
-            <p>車種：{{ $car->model }}</p>
-            <p>乗車可能人数：{{ $car->capacity }}</p>
-            <p>住所：{{ $car->address }}</p>
-            <p>料金(一日あたり)：{{ $car->fee }}</p>
+            <div>
+                <p>車種：{{ $car->model }}</p>
+                <p>乗車可能人数：{{ $car->capacity }}</p>
+                <p>住所：{{ $car->address }}</p>
+                <p>料金(一日あたり)：{{ $car->fee }}</p>
+            </div>
         </div>
         <div>
             <div>
