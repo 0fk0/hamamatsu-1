@@ -14,7 +14,7 @@
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.24/dist/js/uikit.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.24/dist/js/uikit-icons.min.js"></script>
 </head>
-<body>
+<body style="@yield('body-style')">
     <div class="uk-flex uk-flex-column uk-flex-between" style="min-height:100vh">
         @include('layouts.header')
         <div class="uk-flex uk-flex-column uk-flex-center uk-flex-middle">

@@ -1,3 +1,3 @@
-<footer class="uk-text-center uk-background-muted">
+<footer class="uk-text-center">
     ©papers
 </footer>
